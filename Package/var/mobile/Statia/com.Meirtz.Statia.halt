@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#  com.Meirtz.Statia.halt.sh
+#  Statia
+#
+#  Created by Meirtz on 14-1-25.
+#
+
+halt
