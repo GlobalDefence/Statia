@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /Library/MobileSubstrate/DynamicLibraries/
+chmod 755 Statia.*
