@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF37B65A18A5F21F00347A72 /* UIViewController+CWPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = AF37B65818A5F21F00347A72 /* UIViewController+CWPopup.h */; };
+		AF37B65B18A5F21F00347A72 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = AF37B65918A5F21F00347A72 /* UIViewController+CWPopup.m */; };
 		AF56CE6F188CD5FD0074FEEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF56CE6E188CD5FD0074FEEA /* QuartzCore.framework */; };
 		AF56CE76188CD7A20074FEEA /* SIAlertView.h in Sources */ = {isa = PBXBuildFile; fileRef = AF56CE74188CD7A20074FEEA /* SIAlertView.h */; };
 		AF56CE77188CD7A20074FEEA /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF56CE75188CD7A20074FEEA /* SIAlertView.m */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF37B65818A5F21F00347A72 /* UIViewController+CWPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWPopup.h"; sourceTree = "<group>"; };
+		AF37B65918A5F21F00347A72 /* UIViewController+CWPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWPopup.m"; sourceTree = "<group>"; };
 		AF4C5A83189540780084481F /* com.Meirtz.Statia.halt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = com.Meirtz.Statia.halt; sourceTree = "<group>"; };
 		AF4C5A84189540780084481F /* com.Meirtz.Statia.reboot */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = com.Meirtz.Statia.reboot; sourceTree = "<group>"; };
 		AF4C5A85189540780084481F /* SIAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SIAlertView.bundle; sourceTree = "<group>"; };
@@ -62,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF37B65718A5F1E500347A72 /* CWPopup */ = {
+			isa = PBXGroup;
+			children = (
+				AF37B65818A5F21F00347A72 /* UIViewController+CWPopup.h */,
+				AF37B65918A5F21F00347A72 /* UIViewController+CWPopup.m */,
+			);
+			name = CWPopup;
+			sourceTree = "<group>";
+		};
 		AF4C5A7F189540780084481F /* var */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +131,7 @@
 		AF9C8FF1188BC8C400FF2951 = {
 			isa = PBXGroup;
 			children = (
+				AF37B65718A5F1E500347A72 /* CWPopup */,
 				AF99DDE018A4ECF100A1E0DE /* ABFillButton */,
 				AF56CE6C188CD4360074FEEA /* SIAlertView */,
 				AF9C9001188BC8C400FF2951 /* Statia */,
@@ -218,6 +232,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF37B65A18A5F21F00347A72 /* UIViewController+CWPopup.h in Headers */,
 				AF99DDE318A4ED1D00A1E0DE /* ABFillButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +322,7 @@
 				AF56CE77188CD7A20074FEEA /* SIAlertView.m in Sources */,
 				AF9C900B188BC8C400FF2951 /* Statia.mm in Sources */,
 				AF99DDE418A4ED1D00A1E0DE /* ABFillButton.m in Sources */,
+				AF37B65B18A5F21F00347A72 /* UIViewController+CWPopup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
