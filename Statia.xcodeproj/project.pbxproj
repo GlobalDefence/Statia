@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF56CE6F188CD5FD0074FEEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF56CE6E188CD5FD0074FEEA /* QuartzCore.framework */; };
+		AF56CE76188CD7A20074FEEA /* SIAlertView.h in Sources */ = {isa = PBXBuildFile; fileRef = AF56CE74188CD7A20074FEEA /* SIAlertView.h */; };
+		AF56CE77188CD7A20074FEEA /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF56CE75188CD7A20074FEEA /* SIAlertView.m */; };
+		AF99DDE318A4ED1D00A1E0DE /* ABFillButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AF99DDE118A4ED1D00A1E0DE /* ABFillButton.h */; };
+		AF99DDE418A4ED1D00A1E0DE /* ABFillButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AF99DDE218A4ED1D00A1E0DE /* ABFillButton.m */; };
+		AF9C9000188BC8C400FF2951 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C8FFF188BC8C400FF2951 /* Foundation.framework */; };
+		AF9C900B188BC8C400FF2951 /* Statia.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF9C900A188BC8C400FF2951 /* Statia.mm */; };
+		AF9C9016188BCBE700FF2951 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C9015188BCBE700FF2951 /* libsubstrate.dylib */; };
+		AF9C9018188BCBEE00FF2951 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C9017188BCBEE00FF2951 /* UIKit.framework */; };
+		AF9C901A188BCBF500FF2951 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C9019188BCBF500FF2951 /* CoreFoundation.framework */; };
+		AF9C901C188BCC0600FF2951 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C901B188BCC0600FF2951 /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AF4C5A83189540780084481F /* com.Meirtz.Statia.halt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = com.Meirtz.Statia.halt; sourceTree = "<group>"; };
+		AF4C5A84189540780084481F /* com.Meirtz.Statia.reboot */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = com.Meirtz.Statia.reboot; sourceTree = "<group>"; };
+		AF4C5A85189540780084481F /* SIAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SIAlertView.bundle; sourceTree = "<group>"; };
+		AF56CE6E188CD5FD0074FEEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AF56CE74188CD7A20074FEEA /* SIAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIAlertView.h; sourceTree = "<group>"; };
+		AF56CE75188CD7A20074FEEA /* SIAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIAlertView.m; sourceTree = "<group>"; };
+		AF56CE78188CD9E60074FEEA /* SIAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SIAlertView.bundle; path = ../../../Downloads/SIAlertView/SIAlertView/SIAlertView.bundle; sourceTree = "<group>"; };
+		AF99DDE118A4ED1D00A1E0DE /* ABFillButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABFillButton.h; sourceTree = "<group>"; };
+		AF99DDE218A4ED1D00A1E0DE /* ABFillButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABFillButton.m; sourceTree = "<group>"; };
+		AF9C8FFC188BC8C400FF2951 /* Statia.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Statia.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF9C8FFF188BC8C400FF2951 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AF9C9004188BC8C400FF2951 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		AF9C9005188BC8C400FF2951 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		AF9C9007188BC8C400FF2951 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		AF9C9008188BC8C400FF2951 /* Statia-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Statia-Prefix.pch"; sourceTree = "<group>"; };
+		AF9C900A188BC8C400FF2951 /* Statia.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Statia.mm; sourceTree = "<group>"; };
+		AF9C900F188BC8C400FF2951 /* Statia.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Statia.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/Statia.plist; sourceTree = "<group>"; };
+		AF9C9015188BCBE700FF2951 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
+		AF9C9017188BCBEE00FF2951 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AF9C9019188BCBF500FF2951 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		AF9C901B188BCC0600FF2951 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AF9C901D188BCE3200FF2951 /* Statia.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Statia.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF9C8FF8188BC8C400FF2951 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF56CE6F188CD5FD0074FEEA /* QuartzCore.framework in Frameworks */,
+				AF9C901C188BCC0600FF2951 /* CoreGraphics.framework in Frameworks */,
+				AF9C901A188BCBF500FF2951 /* CoreFoundation.framework in Frameworks */,
+				AF9C9018188BCBEE00FF2951 /* UIKit.framework in Frameworks */,
+				AF9C9016188BCBE700FF2951 /* libsubstrate.dylib in Frameworks */,
+				AF9C9000188BC8C400FF2951 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF4C5A7F189540780084481F /* var */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C5A80189540780084481F /* mobile */,
+			);
+			name = var;
+			path = Package/var;
+			sourceTree = "<group>";
+		};
+		AF4C5A80189540780084481F /* mobile */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C5A81189540780084481F /* Statia */,
+			);
+			path = mobile;
+			sourceTree = "<group>";
+		};
+		AF4C5A81189540780084481F /* Statia */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C5A82189540780084481F /* Statia */,
+			);
+			path = Statia;
+			sourceTree = "<group>";
+		};
+		AF4C5A82189540780084481F /* Statia */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C5A83189540780084481F /* com.Meirtz.Statia.halt */,
+				AF4C5A84189540780084481F /* com.Meirtz.Statia.reboot */,
+				AF4C5A85189540780084481F /* SIAlertView.bundle */,
+			);
+			path = Statia;
+			sourceTree = "<group>";
+		};
+		AF56CE6C188CD4360074FEEA /* SIAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				AF56CE74188CD7A20074FEEA /* SIAlertView.h */,
+				AF56CE75188CD7A20074FEEA /* SIAlertView.m */,
+			);
+			name = SIAlertView;
+			sourceTree = "<group>";
+		};
+		AF99DDE018A4ECF100A1E0DE /* ABFillButton */ = {
+			isa = PBXGroup;
+			children = (
+				AF99DDE118A4ED1D00A1E0DE /* ABFillButton.h */,
+				AF99DDE218A4ED1D00A1E0DE /* ABFillButton.m */,
+			);
+			name = ABFillButton;
+			sourceTree = "<group>";
+		};
+		AF9C8FF1188BC8C400FF2951 = {
+			isa = PBXGroup;
+			children = (
+				AF99DDE018A4ECF100A1E0DE /* ABFillButton */,
+				AF56CE6C188CD4360074FEEA /* SIAlertView */,
+				AF9C9001188BC8C400FF2951 /* Statia */,
+				AF9C8FFE188BC8C400FF2951 /* Frameworks */,
+				AF9C8FFD188BC8C400FF2951 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF9C8FFD188BC8C400FF2951 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C8FFC188BC8C400FF2951 /* Statia.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF9C8FFE188BC8C400FF2951 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF56CE78188CD9E60074FEEA /* SIAlertView.bundle */,
+				AF56CE6E188CD5FD0074FEEA /* QuartzCore.framework */,
+				AF9C901B188BCC0600FF2951 /* CoreGraphics.framework */,
+				AF9C9019188BCBF500FF2951 /* CoreFoundation.framework */,
+				AF9C9017188BCBEE00FF2951 /* UIKit.framework */,
+				AF9C9015188BCBE700FF2951 /* libsubstrate.dylib */,
+				AF9C8FFF188BC8C400FF2951 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF9C9001188BC8C400FF2951 /* Statia */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C901D188BCE3200FF2951 /* Statia.xm */,
+				AF9C900A188BC8C400FF2951 /* Statia.mm */,
+				AF9C9002188BC8C400FF2951 /* Package */,
+				AF9C9006188BC8C400FF2951 /* Supporting Files */,
+			);
+			path = Statia;
+			sourceTree = "<group>";
+		};
+		AF9C9002188BC8C400FF2951 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				AF4C5A7F189540780084481F /* var */,
+				AF9C9003188BC8C400FF2951 /* DEBIAN */,
+				AF9C900C188BC8C400FF2951 /* Library */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		AF9C9003188BC8C400FF2951 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C9004188BC8C400FF2951 /* control.txt */,
+				AF9C9005188BC8C400FF2951 /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		AF9C9006188BC8C400FF2951 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C9007188BC8C400FF2951 /* PackageVersion.plist */,
+				AF9C9008188BC8C400FF2951 /* Statia-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF9C900C188BC8C400FF2951 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C900D188BC8C400FF2951 /* MobileSubstrate */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		AF9C900D188BC8C400FF2951 /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C900E188BC8C400FF2951 /* DynamicLibraries */,
+			);
+			name = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		AF9C900E188BC8C400FF2951 /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C900F188BC8C400FF2951 /* Statia.plist */,
+			);
+			name = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AF9C8FF9188BC8C400FF2951 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF99DDE318A4ED1D00A1E0DE /* ABFillButton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AF9C8FFB188BC8C400FF2951 /* Statia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF9C9012188BC8C400FF2951 /* Build configuration list for PBXNativeTarget "Statia" */;
+			buildPhases = (
+				AF9C8FF6188BC8C400FF2951 /* ShellScript */,
+				AF9C8FF7188BC8C400FF2951 /* Sources */,
+				AF9C8FF8188BC8C400FF2951 /* Frameworks */,
+				AF9C8FF9188BC8C400FF2951 /* Headers */,
+				AF9C8FFA188BC8C400FF2951 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Statia;
+			productName = Statia;
+			productReference = AF9C8FFC188BC8C400FF2951 /* Statia.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF9C8FF2188BC8C400FF2951 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = AF9C8FF5188BC8C400FF2951 /* Build configuration list for PBXProject "Statia" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AF9C8FF1188BC8C400FF2951;
+			productRefGroup = AF9C8FFD188BC8C400FF2951 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF9C8FFB188BC8C400FF2951 /* Statia */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AF9C8FF6188BC8C400FF2951 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp-logos";
+		};
+		AF9C8FFA188BC8C400FF2951 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF9C8FF7188BC8C400FF2951 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF56CE76188CD7A20074FEEA /* SIAlertView.h in Sources */,
+				AF56CE77188CD7A20074FEEA /* SIAlertView.m in Sources */,
+				AF9C900B188BC8C400FF2951 /* Statia.mm in Sources */,
+				AF99DDE418A4ED1D00A1E0DE /* ABFillButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AF9C9010188BC8C400FF2951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		AF9C9011188BC8C400FF2951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		AF9C9013188BC8C400FF2951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Statia/Statia-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = 192.168.1.102;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		AF9C9014188BC8C400FF2951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Statia/Statia-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = 192.168.1.102;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF9C8FF5188BC8C400FF2951 /* Build configuration list for PBXProject "Statia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF9C9010188BC8C400FF2951 /* Debug */,
+				AF9C9011188BC8C400FF2951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF9C9012188BC8C400FF2951 /* Build configuration list for PBXNativeTarget "Statia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF9C9013188BC8C400FF2951 /* Debug */,
+				AF9C9014188BC8C400FF2951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF9C8FF2188BC8C400FF2951 /* Project object */;
+}

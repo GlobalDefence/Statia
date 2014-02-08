@@ -1,9 +1,0 @@
-#!/bin/sh
-
-#  posinst.sh
-#  Statia
-#
-#  Created by Meirtz on 14-1-26.
-#
-
-chmod -R 755 /var/mobile/Statia
