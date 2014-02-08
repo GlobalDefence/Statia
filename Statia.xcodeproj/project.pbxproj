@@ -47,6 +47,7 @@
 		AF9C9019188BCBF500FF2951 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		AF9C901B188BCC0600FF2951 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AF9C901D188BCE3200FF2951 /* Statia.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Statia.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		FE303FDB18A62D7D00C8D896 /* Popup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Popup.xib; path = Statia/Package/Library/MobileSubstrate/DynamicLibraries/VC.bundle/Popup.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 			children = (
 				AF37B65818A5F21F00347A72 /* UIViewController+CWPopup.h */,
 				AF37B65918A5F21F00347A72 /* UIViewController+CWPopup.m */,
+				FE303FDB18A62D7D00C8D896 /* Popup.xib */,
 			);
 			name = CWPopup;
 			sourceTree = "<group>";

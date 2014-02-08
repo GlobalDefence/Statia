@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CCBE6CA2-DB59-43CA-82D3-D441F83740A0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Statia</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>68568EB2-2AE8-481C-9153-D27915AD01FA</key>
+		<string>https://github.com/GlobalDefence/Statia.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Statia.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>68568EB2-2AE8-481C-9153-D27915AD01FA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/GlobalDefence/Statia.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>68568EB2-2AE8-481C-9153-D27915AD01FA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>68568EB2-2AE8-481C-9153-D27915AD01FA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Statia</string>
+		</dict>
+	</array>
+</dict>
+</plist>

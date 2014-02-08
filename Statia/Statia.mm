@@ -1,4 +1,4 @@
-#line 1 "/Users/meilingrui/Desktop/Github_GLProjects/Statia/Statia/Statia.xm"
+#line 1 "/Users/BlueCocoa/Desktop/My Projects/Statia/Statia/Statia.xm"
 #import <UIKit/UIKit.h>
 #import <SIAlertView.h>
 #import <notify.h>
@@ -19,7 +19,6 @@ static UIAlertView *alert;
 static UILongPressGestureRecognizer *longPressGR;
 static UIButton *longpressButton;
 static UIViewController *rootVC;
-
 
 @interface SBAppSliderController : UIViewController
         
@@ -72,7 +71,7 @@ static UIViewController *rootVC;
 @class SBAppSliderController; @class SBAppSliderWindowController; 
 static void (*_logos_orig$_ungrouped$SBAppSliderController$switcherWasPresented$)(SBAppSliderController*, SEL, _Bool); static void _logos_method$_ungrouped$SBAppSliderController$switcherWasPresented$(SBAppSliderController*, SEL, _Bool); static BOOL (*_logos_orig$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$)(SBAppSliderController*, SEL, id, unsigned int); static BOOL _logos_method$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$(SBAppSliderController*, SEL, id, unsigned int); static void (*_logos_orig$_ungrouped$SBAppSliderController$_quitAppAtIndex$)(SBAppSliderController*, SEL, unsigned int); static void _logos_method$_ungrouped$SBAppSliderController$_quitAppAtIndex$(SBAppSliderController*, SEL, unsigned int); static void (*_logos_orig$_ungrouped$SBAppSliderController$switcherWillBeDismissed$)(SBAppSliderController*, SEL, BOOL); static void _logos_method$_ungrouped$SBAppSliderController$switcherWillBeDismissed$(SBAppSliderController*, SEL, BOOL); static void _logos_method$_ungrouped$SBAppSliderController$quitAll(SBAppSliderController*, SEL); static id (*_logos_orig$_ungrouped$SBAppSliderWindowController$initWithRootViewController$)(SBAppSliderWindowController*, SEL, id); static id _logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewController$(SBAppSliderWindowController*, SEL, id); static void _logos_method$_ungrouped$SBAppSliderWindowController$showDetail(SBAppSliderWindowController*, SEL); static void _logos_method$_ungrouped$SBAppSliderWindowController$dismissPopup(SBAppSliderWindowController*, SEL); 
 
-#line 69 "/Users/meilingrui/Desktop/Github_GLProjects/Statia/Statia/Statia.xm"
+#line 68 "/Users/BlueCocoa/Desktop/My Projects/Statia/Statia/Statia.xm"
 
 
 
@@ -185,7 +184,6 @@ static id _logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewC
     btn.frame = CGRectMake(100, 400, 90, 35);
     
     [btn setTitle:@"ZoomIn" forState:UIControlStateNormal];
-    [btn setTitle:@"ZoomIn" forState:UIControlStateHighlighted];
     [btn addTarget:self action:@selector(showDetail) forControlEvents:UIControlEventTouchUpInside];
     [rootVC.view addSubview:btn];
     
@@ -204,9 +202,9 @@ static void _logos_method$_ungrouped$SBAppSliderWindowController$showDetail(SBAp
     rootVC.useBlurForPopup = YES;
     
     UIViewController *samplePopupViewController = [[UIViewController alloc] init];
-    UIToolbar *toolbarBackground = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 44, 200, 106)];
-    [samplePopupViewController.view addSubview:toolbarBackground];
-    [samplePopupViewController.view sendSubviewToBack:toolbarBackground];
+    
+
+
     
     [rootVC presentPopupViewController:samplePopupViewController animated:YES completion:^(void) {
         NSLog(@"popup view presented");
@@ -242,4 +240,4 @@ static void _logos_method$_ungrouped$SBAppSliderWindowController$dismissPopup(SB
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$SBAppSliderController = objc_getClass("SBAppSliderController"); MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(switcherWasPresented:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$switcherWasPresented$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$switcherWasPresented$);MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(sliderScroller:isIndexRemovable:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$);MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(_quitAppAtIndex:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$_quitAppAtIndex$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$_quitAppAtIndex$);MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(switcherWillBeDismissed:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$switcherWillBeDismissed$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$switcherWillBeDismissed$);{ char _typeEncoding[1024]; unsigned int i = 0; _typeEncoding[i] = 'v'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$SBAppSliderController, @selector(quitAll), (IMP)&_logos_method$_ungrouped$SBAppSliderController$quitAll, _typeEncoding); }Class _logos_class$_ungrouped$SBAppSliderWindowController = objc_getClass("SBAppSliderWindowController"); MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderWindowController, @selector(initWithRootViewController:), (IMP)&_logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewController$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderWindowController$initWithRootViewController$);{ char _typeEncoding[1024]; unsigned int i = 0; _typeEncoding[i] = 'v'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$SBAppSliderWindowController, @selector(showDetail), (IMP)&_logos_method$_ungrouped$SBAppSliderWindowController$showDetail, _typeEncoding); }{ char _typeEncoding[1024]; unsigned int i = 0; _typeEncoding[i] = 'v'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$SBAppSliderWindowController, @selector(dismissPopup), (IMP)&_logos_method$_ungrouped$SBAppSliderWindowController$dismissPopup, _typeEncoding); }} }
-#line 236 "/Users/meilingrui/Desktop/Github_GLProjects/Statia/Statia/Statia.xm"
+#line 234 "/Users/BlueCocoa/Desktop/My Projects/Statia/Statia/Statia.xm"

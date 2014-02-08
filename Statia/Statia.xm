@@ -19,7 +19,6 @@ static UILongPressGestureRecognizer *longPressGR;
 static UIButton *longpressButton;
 static UIViewController *rootVC;
 
-
 @interface SBAppSliderController : UIViewController
         
 - (NSArray *)applicationList;
@@ -178,7 +177,6 @@ static UIViewController *rootVC;
     btn.frame = CGRectMake(100, 400, 90, 35);
     
     [btn setTitle:@"ZoomIn" forState:UIControlStateNormal];
-    [btn setTitle:@"ZoomIn" forState:UIControlStateHighlighted];
     [btn addTarget:self action:@selector(showDetail) forControlEvents:UIControlEventTouchUpInside];
     [rootVC.view addSubview:btn];
     
@@ -197,9 +195,9 @@ static UIViewController *rootVC;
     rootVC.useBlurForPopup = YES;
     
     UIViewController *samplePopupViewController = [[UIViewController alloc] init];
-    UIToolbar *toolbarBackground = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 44, 200, 106)];
+    /*UIToolbar *toolbarBackground = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 44, 200, 106)];
     [samplePopupViewController.view addSubview:toolbarBackground];
-    [samplePopupViewController.view sendSubviewToBack:toolbarBackground];
+    [samplePopupViewController.view sendSubviewToBack:toolbarBackground];*/
     
     [rootVC presentPopupViewController:samplePopupViewController animated:YES completion:^(void) {
         NSLog(@"popup view presented");
