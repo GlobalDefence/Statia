@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <SIAlertView.h>
 #import <notify.h>
+#import <UIViewController+CWPopup.h>
 
 #define TEST_UIAPPEARANCE 0
 
@@ -53,6 +54,7 @@ static UIButton *longpressButton;
 }
 
 -(id)initWithRootViewController:(id)rootViewController;
+- (void)showDetail:(UIViewController *)rootVC_arg;
 
 @property(readonly, assign, nonatomic) UIWindow* window;
 @property(retain, nonatomic) UIViewController* rootViewController;
@@ -159,11 +161,36 @@ static UIButton *longpressButton;
 
 %hook SBAppSliderWindowController
 
--(id)initWithRootViewController:(id)rootViewController {
+- (id)initWithRootViewController:(id)rootViewController {
     UIViewController *rootVC = (UIViewController *)rootViewController;
+    
+    UIView *parentView = [[UIView alloc] initWithFrame:CGRectMake(0, 350, 320, 200)];
+    parentView.backgroundColor = [UIColor yellowColor];
+    parentView.tag = 1000;
     [rootVC.view addSubview:parentView];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(100, 400, 90, 35);
+    
+    [btn setTitle:@"ZoomIn" forState:UIControlStateNormal];
+    [btn setTitle:@"ZoomIn" forState:UIControlStateHighlighted];
+    [btn addTarget:self action:@selector(showDetail:) forControlEvents:UIControlEventTouchUpInside];
+    [rootVC.view addSubview:btn];
+    
     %orig((id)rootVC);
     return %orig((id)rootVC);
+}
+
+%new
+- (void)showDetail:(UIViewController *)rootVC_arg {
+    UIViewController *samplePopupViewController = [[UIViewController alloc] init];
+    UIToolbar *toolbarBackground = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 44, 200, 106)];
+    [samplePopupViewController.view addSubview:toolbarBackground];
+    [samplePopupViewController.view sendSubviewToBack:toolbarBackground];
+    
+    [rootVC_arg presentPopupViewController:samplePopupViewController animated:YES completion:^(void) {
+        NSLog(@"popup view presented");
+    }];
 }
 
 
