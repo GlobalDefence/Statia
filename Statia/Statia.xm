@@ -17,6 +17,8 @@
 static UIAlertView *alert;
 static UILongPressGestureRecognizer *longPressGR;
 static UIButton *longpressButton;
+static UIViewController *rootVC;
+
 
 @interface SBAppSliderController : UIViewController
         
@@ -47,7 +49,7 @@ static UIButton *longpressButton;
 
 @class UIWindow, SBAppSliderWindow;
 
-@interface SBAppSliderWindowController : NSObject {
+@interface SBAppSliderWindowController : NSObject <UIGestureRecognizerDelegate> {
     
     SBAppSliderWindow* _window;
 	UIViewController* _rootViewController;
@@ -132,6 +134,9 @@ static UIButton *longpressButton;
 }
 - (void)switcherWillBeDismissed:(BOOL)switcher {
     [self.view removeGestureRecognizer:longPressGR];
+    if (rootVC.popupViewController != nil) {
+        [rootVC dismissPopupViewControllerAnimated:YES completion:^{}];
+    }
     %orig;
 }
 
@@ -162,7 +167,7 @@ static UIButton *longpressButton;
 %hook SBAppSliderWindowController
 
 - (id)initWithRootViewController:(id)rootViewController {
-    UIViewController *rootVC = (UIViewController *)rootViewController;
+    rootVC = (UIViewController *)rootViewController;
     
     UIView *parentView = [[UIView alloc] initWithFrame:CGRectMake(0, 350, 320, 200)];
     parentView.backgroundColor = [UIColor yellowColor];
@@ -174,7 +179,7 @@ static UIButton *longpressButton;
     
     [btn setTitle:@"ZoomIn" forState:UIControlStateNormal];
     [btn setTitle:@"ZoomIn" forState:UIControlStateHighlighted];
-    [btn addTarget:self action:@selector(showDetail:) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(showDetail) forControlEvents:UIControlEventTouchUpInside];
     [rootVC.view addSubview:btn];
     
     %orig((id)rootVC);
@@ -182,17 +187,46 @@ static UIButton *longpressButton;
 }
 
 %new
-- (void)showDetail:(UIViewController *)rootVC_arg {
+- (void)showDetail{
+   /* UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPopup)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    tapRecognizer.delegate = self;
+    [rootVC.view addGestureRecognizer:tapRecognizer];*/
+    
+    
+    rootVC.useBlurForPopup = YES;
+    
     UIViewController *samplePopupViewController = [[UIViewController alloc] init];
     UIToolbar *toolbarBackground = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 44, 200, 106)];
     [samplePopupViewController.view addSubview:toolbarBackground];
     [samplePopupViewController.view sendSubviewToBack:toolbarBackground];
     
-    [rootVC_arg presentPopupViewController:samplePopupViewController animated:YES completion:^(void) {
+    [rootVC presentPopupViewController:samplePopupViewController animated:YES completion:^(void) {
         NSLog(@"popup view presented");
     }];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(100, 400, 90, 35);
+    
+    [btn setTitle:@"ZoomOut" forState:UIControlStateNormal];
+    [btn setTitle:@"ZoomOut" forState:UIControlStateHighlighted];
+    [btn addTarget:self action:@selector(dismissPopup) forControlEvents:UIControlEventTouchUpInside];
+    [samplePopupViewController.view addSubview:btn];
+
 }
 
+
+%new
+- (void)dismissPopup {
+    if (rootVC.popupViewController != nil) {
+        [rootVC dismissPopupViewControllerAnimated:YES completion:^{}];
+    }
+}
+
+/*%new
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    return touch.view != rootVC.popupViewController.view;
+}*/
 
 %end
 

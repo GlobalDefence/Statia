@@ -18,6 +18,8 @@
 static UIAlertView *alert;
 static UILongPressGestureRecognizer *longPressGR;
 static UIButton *longpressButton;
+static UIViewController *rootVC;
+
 
 @interface SBAppSliderController : UIViewController
         
@@ -48,7 +50,7 @@ static UIButton *longpressButton;
 
 @class UIWindow, SBAppSliderWindow;
 
-@interface SBAppSliderWindowController : NSObject {
+@interface SBAppSliderWindowController : NSObject <UIGestureRecognizerDelegate> {
     
     SBAppSliderWindow* _window;
 	UIViewController* _rootViewController;
@@ -68,9 +70,9 @@ static UIButton *longpressButton;
 #include <logos/logos.h>
 #include <substrate.h>
 @class SBAppSliderController; @class SBAppSliderWindowController; 
-static void (*_logos_orig$_ungrouped$SBAppSliderController$switcherWasPresented$)(SBAppSliderController*, SEL, _Bool); static void _logos_method$_ungrouped$SBAppSliderController$switcherWasPresented$(SBAppSliderController*, SEL, _Bool); static BOOL (*_logos_orig$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$)(SBAppSliderController*, SEL, id, unsigned int); static BOOL _logos_method$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$(SBAppSliderController*, SEL, id, unsigned int); static void (*_logos_orig$_ungrouped$SBAppSliderController$_quitAppAtIndex$)(SBAppSliderController*, SEL, unsigned int); static void _logos_method$_ungrouped$SBAppSliderController$_quitAppAtIndex$(SBAppSliderController*, SEL, unsigned int); static void (*_logos_orig$_ungrouped$SBAppSliderController$switcherWillBeDismissed$)(SBAppSliderController*, SEL, BOOL); static void _logos_method$_ungrouped$SBAppSliderController$switcherWillBeDismissed$(SBAppSliderController*, SEL, BOOL); static void _logos_method$_ungrouped$SBAppSliderController$quitAll(SBAppSliderController*, SEL); static id (*_logos_orig$_ungrouped$SBAppSliderWindowController$initWithRootViewController$)(SBAppSliderWindowController*, SEL, id); static id _logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewController$(SBAppSliderWindowController*, SEL, id); static void _logos_method$_ungrouped$SBAppSliderWindowController$showDetail$(SBAppSliderWindowController*, SEL, UIViewController *); 
+static void (*_logos_orig$_ungrouped$SBAppSliderController$switcherWasPresented$)(SBAppSliderController*, SEL, _Bool); static void _logos_method$_ungrouped$SBAppSliderController$switcherWasPresented$(SBAppSliderController*, SEL, _Bool); static BOOL (*_logos_orig$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$)(SBAppSliderController*, SEL, id, unsigned int); static BOOL _logos_method$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$(SBAppSliderController*, SEL, id, unsigned int); static void (*_logos_orig$_ungrouped$SBAppSliderController$_quitAppAtIndex$)(SBAppSliderController*, SEL, unsigned int); static void _logos_method$_ungrouped$SBAppSliderController$_quitAppAtIndex$(SBAppSliderController*, SEL, unsigned int); static void (*_logos_orig$_ungrouped$SBAppSliderController$switcherWillBeDismissed$)(SBAppSliderController*, SEL, BOOL); static void _logos_method$_ungrouped$SBAppSliderController$switcherWillBeDismissed$(SBAppSliderController*, SEL, BOOL); static void _logos_method$_ungrouped$SBAppSliderController$quitAll(SBAppSliderController*, SEL); static id (*_logos_orig$_ungrouped$SBAppSliderWindowController$initWithRootViewController$)(SBAppSliderWindowController*, SEL, id); static id _logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewController$(SBAppSliderWindowController*, SEL, id); static void _logos_method$_ungrouped$SBAppSliderWindowController$showDetail(SBAppSliderWindowController*, SEL); static void _logos_method$_ungrouped$SBAppSliderWindowController$dismissPopup(SBAppSliderWindowController*, SEL); 
 
-#line 67 "/Users/meilingrui/Desktop/Github_GLProjects/Statia/Statia/Statia.xm"
+#line 69 "/Users/meilingrui/Desktop/Github_GLProjects/Statia/Statia/Statia.xm"
 
 
 
@@ -139,6 +141,9 @@ static void _logos_method$_ungrouped$SBAppSliderController$_quitAppAtIndex$(SBAp
 }
 static void _logos_method$_ungrouped$SBAppSliderController$switcherWillBeDismissed$(SBAppSliderController* self, SEL _cmd, BOOL switcher) {
     [self.view removeGestureRecognizer:longPressGR];
+    if (rootVC.popupViewController != nil) {
+        [rootVC dismissPopupViewControllerAnimated:YES completion:^{}];
+    }
     _logos_orig$_ungrouped$SBAppSliderController$switcherWillBeDismissed$(self, _cmd, switcher);
 }
 
@@ -169,7 +174,7 @@ static void _logos_method$_ungrouped$SBAppSliderController$quitAll(SBAppSliderCo
 
 
 static id _logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewController$(SBAppSliderWindowController* self, SEL _cmd, id rootViewController) {
-    UIViewController *rootVC = (UIViewController *)rootViewController;
+    rootVC = (UIViewController *)rootViewController;
     
     UIView *parentView = [[UIView alloc] initWithFrame:CGRectMake(0, 350, 320, 200)];
     parentView.backgroundColor = [UIColor yellowColor];
@@ -181,7 +186,7 @@ static id _logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewC
     
     [btn setTitle:@"ZoomIn" forState:UIControlStateNormal];
     [btn setTitle:@"ZoomIn" forState:UIControlStateHighlighted];
-    [btn addTarget:self action:@selector(showDetail:(rootVC)) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(showDetail) forControlEvents:UIControlEventTouchUpInside];
     [rootVC.view addSubview:btn];
     
     _logos_orig$_ungrouped$SBAppSliderWindowController$initWithRootViewController$(self, _cmd, (id)rootVC);
@@ -189,16 +194,45 @@ static id _logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewC
 }
 
 
-static void _logos_method$_ungrouped$SBAppSliderWindowController$showDetail$(SBAppSliderWindowController* self, SEL _cmd, UIViewController * rootVC_arg) {
+static void _logos_method$_ungrouped$SBAppSliderWindowController$showDetail(SBAppSliderWindowController* self, SEL _cmd){
+   
+
+
+
+    
+    
+    rootVC.useBlurForPopup = YES;
+    
     UIViewController *samplePopupViewController = [[UIViewController alloc] init];
     UIToolbar *toolbarBackground = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 44, 200, 106)];
     [samplePopupViewController.view addSubview:toolbarBackground];
     [samplePopupViewController.view sendSubviewToBack:toolbarBackground];
     
-    [rootVC_arg presentPopupViewController:samplePopupViewController animated:YES completion:^(void) {
+    [rootVC presentPopupViewController:samplePopupViewController animated:YES completion:^(void) {
         NSLog(@"popup view presented");
     }];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(100, 400, 90, 35);
+    
+    [btn setTitle:@"ZoomOut" forState:UIControlStateNormal];
+    [btn setTitle:@"ZoomOut" forState:UIControlStateHighlighted];
+    [btn addTarget:self action:@selector(dismissPopup) forControlEvents:UIControlEventTouchUpInside];
+    [samplePopupViewController.view addSubview:btn];
+
 }
+
+
+
+static void _logos_method$_ungrouped$SBAppSliderWindowController$dismissPopup(SBAppSliderWindowController* self, SEL _cmd) {
+    if (rootVC.popupViewController != nil) {
+        [rootVC dismissPopupViewControllerAnimated:YES completion:^{}];
+    }
+}
+
+
+
+
 
 
 
@@ -207,5 +241,5 @@ static void _logos_method$_ungrouped$SBAppSliderWindowController$showDetail$(SBA
 
 
 static __attribute__((constructor)) void _logosLocalInit() {
-{Class _logos_class$_ungrouped$SBAppSliderController = objc_getClass("SBAppSliderController"); MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(switcherWasPresented:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$switcherWasPresented$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$switcherWasPresented$);MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(sliderScroller:isIndexRemovable:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$);MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(_quitAppAtIndex:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$_quitAppAtIndex$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$_quitAppAtIndex$);MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(switcherWillBeDismissed:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$switcherWillBeDismissed$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$switcherWillBeDismissed$);{ char _typeEncoding[1024]; unsigned int i = 0; _typeEncoding[i] = 'v'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$SBAppSliderController, @selector(quitAll), (IMP)&_logos_method$_ungrouped$SBAppSliderController$quitAll, _typeEncoding); }Class _logos_class$_ungrouped$SBAppSliderWindowController = objc_getClass("SBAppSliderWindowController"); MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderWindowController, @selector(initWithRootViewController:), (IMP)&_logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewController$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderWindowController$initWithRootViewController$);{ char _typeEncoding[1024]; unsigned int i = 0; _typeEncoding[i] = 'v'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; memcpy(_typeEncoding + i, @encode(UIViewController *), strlen(@encode(UIViewController *))); i += strlen(@encode(UIViewController *)); _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$SBAppSliderWindowController, @selector(showDetail:), (IMP)&_logos_method$_ungrouped$SBAppSliderWindowController$showDetail$, _typeEncoding); }} }
-#line 202 "/Users/meilingrui/Desktop/Github_GLProjects/Statia/Statia/Statia.xm"
+{Class _logos_class$_ungrouped$SBAppSliderController = objc_getClass("SBAppSliderController"); MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(switcherWasPresented:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$switcherWasPresented$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$switcherWasPresented$);MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(sliderScroller:isIndexRemovable:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$sliderScroller$isIndexRemovable$);MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(_quitAppAtIndex:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$_quitAppAtIndex$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$_quitAppAtIndex$);MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderController, @selector(switcherWillBeDismissed:), (IMP)&_logos_method$_ungrouped$SBAppSliderController$switcherWillBeDismissed$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderController$switcherWillBeDismissed$);{ char _typeEncoding[1024]; unsigned int i = 0; _typeEncoding[i] = 'v'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$SBAppSliderController, @selector(quitAll), (IMP)&_logos_method$_ungrouped$SBAppSliderController$quitAll, _typeEncoding); }Class _logos_class$_ungrouped$SBAppSliderWindowController = objc_getClass("SBAppSliderWindowController"); MSHookMessageEx(_logos_class$_ungrouped$SBAppSliderWindowController, @selector(initWithRootViewController:), (IMP)&_logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewController$, (IMP*)&_logos_orig$_ungrouped$SBAppSliderWindowController$initWithRootViewController$);{ char _typeEncoding[1024]; unsigned int i = 0; _typeEncoding[i] = 'v'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$SBAppSliderWindowController, @selector(showDetail), (IMP)&_logos_method$_ungrouped$SBAppSliderWindowController$showDetail, _typeEncoding); }{ char _typeEncoding[1024]; unsigned int i = 0; _typeEncoding[i] = 'v'; i += 1; _typeEncoding[i] = '@'; i += 1; _typeEncoding[i] = ':'; i += 1; _typeEncoding[i] = '\0'; class_addMethod(_logos_class$_ungrouped$SBAppSliderWindowController, @selector(dismissPopup), (IMP)&_logos_method$_ungrouped$SBAppSliderWindowController$dismissPopup, _typeEncoding); }} }
+#line 236 "/Users/meilingrui/Desktop/Github_GLProjects/Statia/Statia/Statia.xm"
