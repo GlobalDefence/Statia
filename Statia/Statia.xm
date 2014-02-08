@@ -161,10 +161,6 @@ static UIButton *longpressButton;
 
 -(id)initWithRootViewController:(id)rootViewController {
     UIViewController *rootVC = (UIViewController *)rootViewController;
-    
-    UIView *parentView = [[UIView alloc] initWithFrame:CGRectMake(0, 150, 320, 200)];
-    parentView.backgroundColor = [UIColor yellowColor];
-    parentView.tag = 1000;
     [rootVC.view addSubview:parentView];
     %orig((id)rootVC);
     return %orig((id)rootVC);

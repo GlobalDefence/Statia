@@ -169,10 +169,6 @@ static void _logos_method$_ungrouped$SBAppSliderController$quitAll(SBAppSliderCo
 static id _logos_method$_ungrouped$SBAppSliderWindowController$initWithRootViewController$(SBAppSliderWindowController* self, SEL _cmd, id rootViewController) {
     UIViewController *rootVC = (UIViewController *)rootViewController;
     
-    UIView *parentView = [[UIView alloc] initWithFrame:CGRectMake(0, 150, 320, 200)];
-    parentView.backgroundColor = [UIColor yellowColor];
-    parentView.tag = 1000;
-    [rootVC.view addSubview:parentView];
     _logos_orig$_ungrouped$SBAppSliderWindowController$initWithRootViewController$(self, _cmd, (id)rootVC);
     return _logos_orig$_ungrouped$SBAppSliderWindowController$initWithRootViewController$(self, _cmd, (id)rootVC);
 }
