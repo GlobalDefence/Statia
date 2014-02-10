@@ -10,7 +10,6 @@
 		AF37B65A18A5F21F00347A72 /* UIViewController+CWPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = AF37B65818A5F21F00347A72 /* UIViewController+CWPopup.h */; };
 		AF37B65B18A5F21F00347A72 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = AF37B65918A5F21F00347A72 /* UIViewController+CWPopup.m */; };
 		AF56CE6F188CD5FD0074FEEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF56CE6E188CD5FD0074FEEA /* QuartzCore.framework */; };
-		AF56CE76188CD7A20074FEEA /* SIAlertView.h in Sources */ = {isa = PBXBuildFile; fileRef = AF56CE74188CD7A20074FEEA /* SIAlertView.h */; };
 		AF56CE77188CD7A20074FEEA /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF56CE75188CD7A20074FEEA /* SIAlertView.m */; };
 		AF99DDE318A4ED1D00A1E0DE /* ABFillButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AF99DDE118A4ED1D00A1E0DE /* ABFillButton.h */; };
 		AF99DDE418A4ED1D00A1E0DE /* ABFillButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AF99DDE218A4ED1D00A1E0DE /* ABFillButton.m */; };
@@ -320,7 +319,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF56CE76188CD7A20074FEEA /* SIAlertView.h in Sources */,
 				AF56CE77188CD7A20074FEEA /* SIAlertView.m in Sources */,
 				AF9C900B188BC8C400FF2951 /* Statia.mm in Sources */,
 				AF99DDE418A4ED1D00A1E0DE /* ABFillButton.m in Sources */,
