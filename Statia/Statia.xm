@@ -237,7 +237,7 @@ static UIView *parentView;
                 [UIView animateWithDuration:0.4f animations:^{
                     appPage.alpha = 0;
                 } completion:^(BOOL finished) {
-                    [self _quitAppAtIndex:[[self applicationList] indexOfObject:appID]];
+                    [self _quitAppAtIndex:(unsigned int)[[self applicationList] indexOfObject:appID]];
                 }];
         }
 		//[self forceDismissAnimated:YES];
