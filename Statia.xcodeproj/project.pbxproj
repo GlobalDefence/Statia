@@ -19,6 +19,8 @@
 		AF9C9018188BCBEE00FF2951 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C9017188BCBEE00FF2951 /* UIKit.framework */; };
 		AF9C901A188BCBF500FF2951 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C9019188BCBF500FF2951 /* CoreFoundation.framework */; };
 		AF9C901C188BCC0600FF2951 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C901B188BCC0600FF2951 /* CoreGraphics.framework */; };
+		FE8545DC18A9003200B3CA6C /* LightUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8545DA18A9003200B3CA6C /* LightUtils.h */; };
+		FE8545DD18A9003200B3CA6C /* LightUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8545DB18A9003200B3CA6C /* LightUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		AF9C901B188BCC0600FF2951 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AF9C901D188BCE3200FF2951 /* Statia.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Statia.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FE303FDB18A62D7D00C8D896 /* Popup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Popup.xib; path = Statia/Package/Library/MobileSubstrate/DynamicLibraries/VC.bundle/Popup.xib; sourceTree = "<group>"; };
+		FE8545DA18A9003200B3CA6C /* LightUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightUtils.h; sourceTree = "<group>"; };
+		FE8545DB18A9003200B3CA6C /* LightUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,8 @@
 		AF9C9001188BC8C400FF2951 /* Statia */ = {
 			isa = PBXGroup;
 			children = (
+				FE8545DA18A9003200B3CA6C /* LightUtils.h */,
+				FE8545DB18A9003200B3CA6C /* LightUtils.m */,
 				AF9C901D188BCE3200FF2951 /* Statia.xm */,
 				AF9C900A188BC8C400FF2951 /* Statia.mm */,
 				AF9C9002188BC8C400FF2951 /* Package */,
@@ -234,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF37B65A18A5F21F00347A72 /* UIViewController+CWPopup.h in Headers */,
+				FE8545DC18A9003200B3CA6C /* LightUtils.h in Headers */,
 				AF99DDE318A4ED1D00A1E0DE /* ABFillButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +329,7 @@
 				AF56CE77188CD7A20074FEEA /* SIAlertView.m in Sources */,
 				AF9C900B188BC8C400FF2951 /* Statia.mm in Sources */,
 				AF99DDE418A4ED1D00A1E0DE /* ABFillButton.m in Sources */,
+				FE8545DD18A9003200B3CA6C /* LightUtils.m in Sources */,
 				AF37B65B18A5F21F00347A72 /* UIViewController+CWPopup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
